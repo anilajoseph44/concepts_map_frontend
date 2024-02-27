@@ -1,4 +1,4 @@
-import 'package:concepts_map/pages/buyer_home.dart';
+import 'package:concepts_map/pages/buyerfeed.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -14,7 +14,13 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body:
         SingleChildScrollView(
-          child: Container(padding: EdgeInsets.all(20),
+          child: Container(
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.orange.withOpacity(0.34),Colors.grey.withOpacity(0.50)]
+              )
+            ),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
           
@@ -27,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(" Sign up",style: TextStyle(color: Colors.orange),),
                   ],
                 ),
-                Image.asset("assets/conceptsmap.png"),
+                Image.asset("assets/concepts_map.png"),
                 Text(" Welcome to our portal where you can explore ultimate ads concepts from our fresh and talented brains",style: TextStyle(color: Colors.grey.withOpacity(0.99)),),
                 SizedBox(height: 50,),
                 TextField(
@@ -57,11 +63,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       labelText: "Password",
                       labelStyle: TextStyle(color: Colors.orange),
-                      hintText: "6+ strong character",
+                      hintText: "Password",
                       hintStyle: TextStyle(color: Colors.grey.withOpacity(0.50)),
                       suffixIcon: Icon(Icons.lock,color: Colors.grey.withOpacity(0.50),),
                       floatingLabelBehavior: FloatingLabelBehavior.always
                   ),
+                  obscureText: true,
                 ),
                 SizedBox(height: 20,),
                 SizedBox(
@@ -77,12 +84,12 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                       onPressed: ()
                       {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BuyerHome()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BuyerFeed()));
           
                       },
                       child: Text("Sign in")),
                 ),
-                SizedBox(height: 30,),
+                SizedBox(height: 80,),
                 Row(
                   children: [
                     Expanded(child: Divider(
@@ -97,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
           
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 10,),
                 Row(
                   children: [
                     ElevatedButton.icon(
@@ -142,7 +149,9 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       icon: Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/108px-LinkedIn_icon.svg.png?20210220164014",height: 28,),
                       label: Text(""),
-                    )
+                    ),
+
+                    SizedBox(height: 190,)
                   ],
                 )
               ],
