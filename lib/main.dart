@@ -2,7 +2,7 @@ import 'package:concepts_map/pages/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ConceptsMap());
 }
 
 class ConceptsMap extends StatelessWidget {
