@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AutoMotive extends StatefulWidget {
-  const AutoMotive({Key? key}) : super(key: key);
+class BuyerDownloads extends StatefulWidget {
+  const BuyerDownloads({Key? key}) : super(key: key);
 
   @override
-  State<AutoMotive> createState() => _MostRatedState();
+  State<BuyerDownloads> createState() => _MostRatedState();
 }
 
-class _MostRatedState extends State<AutoMotive> {
+class _MostRatedState extends State<BuyerDownloads> {
   List<Map<String, dynamic>> data = [
     {
       "title": "Fifa 2022 special concept for cold beverages",
@@ -148,16 +148,6 @@ class _MostRatedState extends State<AutoMotive> {
                       Icon(Icons.attach_money, color: Colors.orange),
                       SizedBox(width: 4),
                       Text("20"),
-                    ],
-                  ),
-                  SizedBox(height: 10,),
-                  Row(
-                    children: [
-                      Icon(Icons.shopping_cart_outlined),
-                      Text("Add to Cart"),
-                      SizedBox(width: 170,),
-                      Icon(Icons.add),
-                      Text("Buy")
                     ],
                   )
                 ],

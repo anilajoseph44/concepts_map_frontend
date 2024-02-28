@@ -149,6 +149,16 @@ class _MostRatedState extends State<BusinessSupport> {
                       SizedBox(width: 4),
                       Text("20"),
                     ],
+                  ),
+                  SizedBox(height: 20,),
+                  Row(
+                    children: [
+                      Icon(Icons.shopping_cart_outlined),
+                      Text("Add to Cart"),
+                      SizedBox(width: 170,),
+                      Icon(Icons.add),
+                      Text("Buy")
+                    ],
                   )
                 ],
               ),

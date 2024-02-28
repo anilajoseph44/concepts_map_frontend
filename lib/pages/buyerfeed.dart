@@ -1,5 +1,6 @@
 import 'package:concepts_map/pages/Automotive.dart';
 import 'package:concepts_map/pages/BusinessSupport.dart';
+import 'package:concepts_map/pages/buyer_profile.dart';
 import 'package:flutter/material.dart';
 
 class BuyerFeed extends StatefulWidget {
@@ -31,6 +32,8 @@ class _BuyerFeedState extends State<BuyerFeed> {
   ];
 
   int currentIndex = 0;
+  String selectedUser = 'Costa Coffee';
+  List<String> userOptions = ['Costa Coffee','Profile', 'Privacy'];
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class _BuyerFeedState extends State<BuyerFeed> {
               "assets/concepts_map.png",
               height: 20,
             ),
-            SizedBox(width: 110),
+            SizedBox(width: 80),
             Icon(Icons.notifications_outlined, size: 20),
             SizedBox(width: 10),
             CircleAvatar(
@@ -52,9 +55,28 @@ class _BuyerFeedState extends State<BuyerFeed> {
                 height: 25,
               ),
             ),
-            SizedBox(width: 10),
-            Text("John Doe"),
-            Icon(Icons.expand_more),
+            DropdownButton<String>(
+              value: selectedUser,
+              onChanged: (String? newValue) {
+                setState(() {
+                  if(newValue=='Profile')
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>BuyerProfile()));
+                    }
+                  else
+                    {
+                      selectedUser=newValue!;
+                    }
+                }
+                );
+              },
+              items: userOptions.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
           ],
         ),
         body: Column(
